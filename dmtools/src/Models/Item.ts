@@ -8,7 +8,8 @@ export interface IItem extends Document {
     release_date: string,
     item_text: string,
     equipped: boolean, 
-    source: string
+    source: string,
+    _id: string
 }
 
 const ItemSchema: Schema = new Schema({
@@ -34,6 +35,9 @@ const ItemSchema: Schema = new Schema({
         type: Boolean
     }, 
     source: {
+        type: String
+    },
+    _id: {
         type: String
     }
 })

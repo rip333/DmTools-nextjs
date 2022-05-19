@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         </Link>
       </li>
       <li>
-        <Link href="/items">
+        <Link href="/item-list">
           <a>Items List</a>
         </Link>
       </li>

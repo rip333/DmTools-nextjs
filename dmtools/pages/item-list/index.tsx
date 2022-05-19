@@ -1,12 +1,13 @@
 import { IItem } from "../../src/Models/Item";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
-export default function Items() {
+export default function ItemList() {
     const [items, setItems] = useState<IItem[]>([]);
     useEffect(() => {
         const asyncGetItems = async () => {
             const { origin } = window.location;
-            const data = await fetch(origin + "/api/items");
+            const data = await fetch(origin + "/api/item-list");
             const items = await data.json();
             return items;
         };
@@ -23,9 +24,10 @@ export default function Items() {
 
     const mappedItems = items.reverse().map((item, i) => (
         <div>
-            <p>
-                {item.name}
-            </p>
+            <Link href={"/item/" + item._id}>
+                <a>{item.name}</a>
+            </Link>
+
         </div>
     ));
 
