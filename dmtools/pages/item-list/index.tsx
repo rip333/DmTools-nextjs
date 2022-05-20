@@ -5,7 +5,6 @@ import styles from "./styles.module.css";
 export default function ItemList() {
     return (
         <div className={styles.itemlists}>
-            <Header />
             <ul>
                 <li>
                     <Link href="/item-list/Common">

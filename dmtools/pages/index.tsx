@@ -5,7 +5,6 @@ import Gandalf from '../components/Gandalf/index';
 const Home: NextPage = () => {
   return (
     <div>
-      <Header />
       <Gandalf />
     </div>
   );

@@ -28,7 +28,6 @@ export default function ItemListByRarity({ items, rarity }: { items: IItem[], ra
 
     return (
         <div className={styles.itemlistbyrarity}>
-            <Header />
             <div className={styles.itemlist_header}>
                 <h3>{getRarityDisplayText(rarity)} Items</h3>
                 <SearchView onSearch={setQuery} />

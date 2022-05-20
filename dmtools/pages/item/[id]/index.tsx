@@ -7,7 +7,6 @@ import ItemView from "../../../components/ItemView";
 export default function Item({ item }: { item: IItem }) {
     return (
         <div>
-            <Header />
             <ItemView item={item} />
         </div>
     );
