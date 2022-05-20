@@ -6,3 +6,17 @@
     font-size: 1.5em;
     padding: 0 3rem;
 }
+
+.itemlist_random  {
+    margin-top: 16px;
+    padding: 0.5rem 2rem;
+    font-size: large;
+    border-style: none;
+    background-color: rgb(54, 152, 204);
+    color: white;
+    border-radius: 4px;
+}
+
+.itemlist_random:hover {
+    background-color: rgb(60, 216, 251);
+}
