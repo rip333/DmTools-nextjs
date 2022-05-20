@@ -1,0 +1,22 @@
+.itemview {
+    padding: 1rem 2rem;
+    font-size: 19px;
+}
+
+
+.itemview__description {
+    font-size: 24px;
+    letter-spacing: 0.3px;
+    line-height: 2;
+}
+
+.itemview_name {
+    font-size: 60px;
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}

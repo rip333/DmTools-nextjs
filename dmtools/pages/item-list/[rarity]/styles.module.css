@@ -1,0 +1,8 @@
+.itemlistbyrarity {
+    padding-bottom: 3rem;
+}
+
+.itemlistbyrarity > h3 {
+    font-size: 1.5em;
+    padding: 0 2rem;
+}

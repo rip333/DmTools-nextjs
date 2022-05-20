@@ -1,21 +1,14 @@
 import type { NextPage } from 'next'
-import Link from 'next/link'
+import Header from '../components/Header';
+import Gandalf from '../components/Gandalf/index';
 
 const Home: NextPage = () => {
   return (
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/item-list">
-          <a>Items List</a>
-        </Link>
-      </li>
-    </ul>
-  )
+    <div>
+      <Header />
+      <Gandalf />
+    </div>
+  );
 }
 
 export default Home

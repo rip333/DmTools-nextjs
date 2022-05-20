@@ -1,12 +1,14 @@
 import { IItem } from "../../../src/Models/Item";
 import { connectToDatabase } from "../../../util/mongodb";
 import { ObjectId } from "mongodb";
+import Header from "../../../components/Header";
+import ItemView from "../../../components/ItemView";
 
 export default function Item({ item }: { item: IItem }) {
-
     return (
         <div>
-           Name:  {item.name}
+            <Header />
+            <ItemView item={item} />
         </div>
     );
 }

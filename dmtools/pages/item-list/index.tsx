@@ -1,39 +1,44 @@
-import { IItem } from "../../src/Models/Item";
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import Header from "../../components/Header";
+import styles from "./styles.module.css";
 
 export default function ItemList() {
-    const [items, setItems] = useState<IItem[]>([]);
-    useEffect(() => {
-        const asyncGetItems = async () => {
-            const { origin } = window.location;
-            const data = await fetch(origin + "/api/item-list");
-            const items = await data.json();
-            return items;
-        };
-        if (window) {
-            asyncGetItems()
-                .then((items) => {
-                    setItems(items);
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        }
-    }, []);
-
-    const mappedItems = items.reverse().map((item, i) => (
-        <div>
-            <Link href={"/item/" + item._id}>
-                <a>{item.name}</a>
-            </Link>
-
-        </div>
-    ));
-
     return (
-        <div>
-            {mappedItems}
+        <div className={styles.itemlists}>
+            <Header />
+            <ul>
+                <li>
+                    <Link href="/item-list/Common">
+                        <a className={styles.itemlists__link}>Common</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/item-list/Rare">
+                        <a className={styles.itemlists__link}>Rare</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/item-list/Uncommon">
+                        <a className={styles.itemlists__link}>Uncommon</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/item-list/VeryRare">
+                        <a className={styles.itemlists__link}>Very Rare</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/item-list/Legendary">
+                        <a className={styles.itemlists__link}>Legendary</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/item-list/Artifact">
+                        <a className={styles.itemlists__link}>Artifact</a>
+                    </Link>
+                </li>
+            </ul>
+
         </div>
     );
 }
