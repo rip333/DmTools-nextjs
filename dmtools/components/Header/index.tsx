@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import SearchView from '../Search';
 import styles from './styles.module.css';
 
 function Header() {
@@ -17,9 +16,6 @@ function Header() {
                         <a>Items Lists</a>
                     </Link>
                 </li>
-                {/* <li>
-                    <SearchView />
-                </li> */}
             </ul>
         </div>
     );

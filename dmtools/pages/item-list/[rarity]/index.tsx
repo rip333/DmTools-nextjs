@@ -4,16 +4,31 @@ import ItemListView from "../../../components/ItemListView";
 import { connectToDatabase } from "../../../util/mongodb";
 import { getRarityDisplayText } from "../../../src/Rarity";
 import styles from "./styles.module.css";
+import SearchView from "../../../components/Search";
+import { useState } from "react";
 
 export default function ItemListByRarity({ items, rarity }: { items: IItem[], rarity: string }) {
+    const [query, setQuery] = useState("");
+    let displayItems: IItem[] = [];
+
     if (items) {
         items.sort((x, y) => (x.name > y.name) ? 1 : -1);
+        if(query !== "") {
+            displayItems = items.filter(x => x.name.toLowerCase().includes(query.toLowerCase()));
+        }
+        else {
+            displayItems = items;
+        }
     }
+
     return (
         <div className={styles.itemlistbyrarity}>
             <Header />
+            <div className={styles.itemlist_header}>
             <h3>{getRarityDisplayText(rarity)} Items</h3>
-            <ItemListView items={items} />
+            <SearchView onSearch={setQuery} />
+            </div>
+            <ItemListView items={displayItems} />
         </div>
     );
 }
